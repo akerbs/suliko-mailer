@@ -42,17 +42,19 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 let transporter = nodemailer.createTransport(
   {
+    pool: true,
     service: "Gmail",
     auth: {
       type: "OAuth2",
       user: process.env.EMAIL,
+      // accessUrl: process.env.ACCESS_URL,  // for gmail it goes default, no need to define
       refreshToken: process.env.EMAIL_REFRESH_TOKEN,
       clientId: process.env.EMAIL_CLIENT_ID,
       clientSecret: process.env.EMAIL_CLIENT_SECRET,
     },
   },
   {
-    from: `Suliko <${process.env.EMAIL}>`,
+    from: `Mailer <${process.env.EMAIL}>`,
   }
 );
 
