@@ -116,7 +116,7 @@ Email: ${req.body.email}
   transporter.sendMail(
     {
       // from: process.env.GMAIL_ADDRESS,
-      to: "anker2702@gmail.com", // emailOfRestourantsAdmin
+      to: "anker2702@gmail.com, anker2702@gmx.de", // emailOfRestourantsAdmin
       subject: "New table reservation",
       html: msgToAdmin,
     },
