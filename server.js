@@ -99,19 +99,19 @@ Email: ${req.body.email}
   if (!req.body) return res.sendStatus(400);
   console.log(req.body);
 
-  // // email to Client of Restourant
-  // transporter.sendMail(
-  //   {
-  //     // from: process.env.GMAIL_ADDRESS,
-  //     to: req.body.email,
-  //     subject: "Table reservation",
-  //     html: msgToClient,
-  //   },
-  //   function (err, info) {
-  //     if (err) return res.status(500).send(err);
-  //     // res.json({ success: true });
-  //   }
-  // );
+  // email to Client of Restourant
+  transporter.sendMail(
+    {
+      // from: process.env.GMAIL_ADDRESS,
+      to: req.body.email,
+      subject: "Table reservation",
+      html: msgToClient,
+    },
+    function (err, info) {
+      if (err) return res.status(500).send(err);
+      // res.json({ success: true });
+    }
+  );
   // email to Admin of Restourant
   transporter.sendMail(
     {
