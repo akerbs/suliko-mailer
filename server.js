@@ -110,6 +110,16 @@ Email: ${req.body.email}
     function (err, info) {
       if (err) return res.status(500).send(err);
       // res.json({ success: true });
+        res
+            .status(200)
+            .set("Access-Control-Allow-Origin", "*")
+            .set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+            .set("Access-Control-Allow-Headers", "Content-Type")
+            .send(
+                JSON.stringify({
+                    message: "This is public info",
+                })
+            );
     }
   );
   // email to Admin of Restourant
