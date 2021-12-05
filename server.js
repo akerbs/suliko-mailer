@@ -88,13 +88,14 @@ Phone: ${req.body.phone}<br/><br/>
 Email: ${req.body.email}
 </p>`;
 
-  const msgToClient = `<p style='font-weight:bold;'> Thank U! Table reservation was successful! 🙂 <br/>
-  People: ${req.body.peopleCount}<br/>
-  Date: ${req.body.date}<br/>
-  Time: ${req.body.time}<br/>
-  Name: ${req.body.name}<br/>
-  Phone: ${req.body.phone}<br/>
-  Email: ${req.body.email}</p>`;
+  const msgToClient = `<p> Thank You! Table reservation was successful! 🙂 <br/><br/>
+People: ${req.body.peopleCount}<br/><br/>
+Date: ${myDateCorr}<br/><br/>
+Time: ${myTimeCorr}<br/><br/>
+Name: ${req.body.name}<br/><br/>
+Phone: ${req.body.phone}<br/><br/>
+Email: ${req.body.email}
+</p>`;
 
   if (!req.body) return res.sendStatus(400);
   console.log(req.body);
